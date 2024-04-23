@@ -1,0 +1,46 @@
+.prompt {
+  width: 80vw;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  background-color: transparent;
+  color: #fff;
+  padding: 10px;
+  font-family: Consolas, monospace;
+}
+
+.prompt h2 {
+  color: turquoise;
+  font-size: 20px;
+  font-weight: 400;
+  word-spacing: 4px;
+  letter-spacing: -0.4px;
+  display: inline-block;
+}
+
+.prompt h2 .device {
+  color: #87CEFA;
+  display: inline-block;
+}
+
+.prompt h2 .model {
+  color: #FF69B4;
+  display: inline-block;
+}
+
+.prompt input {
+  border: none;
+  width: 60vw;
+  background-color: transparent;
+  caret-color: yellowgreen;
+
+  background-color: transparent;
+  font-family: Consolas, monospace;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.prompt input:focus,
+.prompt input:active {
+  outline: none;
+  border: none;
+}

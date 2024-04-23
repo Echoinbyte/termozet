@@ -1,0 +1,25 @@
+/* FalseValue.css */
+
+.false-value-message {
+  font-family: Consolas, monospace;
+}
+
+.error-text {
+  color: #ff3232;
+  /* Red color */
+}
+
+.command {
+  color: #ff7777;
+  /* Light red color */
+}
+
+.development-phase {
+  color: #00ff00;
+  /* Green color */
+}
+
+.available-commands {
+  color: #ffff00;
+  /* Yellow color */
+}

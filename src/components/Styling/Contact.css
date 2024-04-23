@@ -1,0 +1,64 @@
+.contact-window {
+  background-color: #0d0d0d;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 5px;
+}
+
+.contact-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.red {
+  background-color: #ff5f56;
+}
+
+.yellow {
+  background-color: #ffbd2e;
+}
+
+.green {
+  background-color: #27c93f;
+}
+
+.contact-title {
+  color: #fff;
+  font-size: 14px;
+}
+
+.contact-body {
+  padding: 20px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-info h2 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.profile-info p {
+  color: #bbb;
+  font-size: 16px;
+  margin-bottom: 5px;
+}

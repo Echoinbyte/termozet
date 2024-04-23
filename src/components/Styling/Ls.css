@@ -1,0 +1,28 @@
+/* Ls.css */
+
+.list-container {
+  list-style-type: none;
+  padding: 0;
+  margin-inline: 20px;
+}
+
+.list-item {
+  font-family: Consolas, monospace;
+  color: white;
+}
+
+.cmd {
+  color: #87CEFA;
+}
+
+.action {
+  color: #FF69B4;
+}
+
+.domain {
+  color: #FFFF00;
+}
+
+.tail {
+  color: #FF69B4;
+}

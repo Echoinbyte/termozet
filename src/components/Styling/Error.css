@@ -1,0 +1,17 @@
+/* Error.css */
+
+.error-message {
+  color: #ff3232;
+  /* Red color */
+  font-family: Consolas, monospace;
+}
+
+.command-not-found {
+  color: #ff7777;
+  /* Light red color */
+}
+
+.available-commands {
+  color: #ffff00;
+  /* Yellow color */
+}

@@ -1,0 +1,30 @@
+/* Help.css */
+
+.help-container {
+  font-family: Consolas, monospace;
+  color: #fff;
+}
+
+h2{
+  margin-bottom: 10px;
+}
+
+.help-list {
+  padding: 0;
+  margin: 0;
+}
+
+.help-list dt {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.help-list dd {
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.help-command {
+  color: #87CEFA;
+}

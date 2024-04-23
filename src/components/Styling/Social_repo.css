@@ -1,0 +1,52 @@
+/* Repo.css */
+
+.repo-container {
+  font-family: Consolas, monospace;
+  color: #fff;
+}
+
+.repo-link {
+  color: #87CEFA;
+  /* Light blue color */
+  text-decoration: underline;
+}
+
+.repo-info {
+  margin-top: 10px;
+  border: 2px solid #87CEFA;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.repo-info-item {
+  margin-bottom: 10px;
+}
+
+.repo-info-label {
+  color: #87CEFA;
+  /* Light blue color */
+  font-weight: bold;
+}
+
+.repo-info-value {
+  color: #fff;
+  /* White color */
+}
+
+.repo-info img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.repo-link-container {
+  margin-bottom: 20px;
+  text-align: center;
+}

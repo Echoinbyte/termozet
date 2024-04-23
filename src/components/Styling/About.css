@@ -1,0 +1,162 @@
+.terminal-window {
+  background-color: #0d0d0d;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 600px;
+  height: 550px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  text-wrap: wrap;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 5px;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.red {
+  background-color: #ff5f56;
+}
+
+.yellow {
+  background-color: #ffbd2e;
+}
+
+.green {
+  background-color: #27c93f;
+}
+
+.terminal-title {
+  color: #fff;
+  font-size: 14px;
+}
+
+.terminal-body {
+  padding: 20px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-info h2 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.profile-info p {
+  color: #bbb;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.about {
+  width: 1500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  color: #fff;
+}
+
+.about_img {
+  width: 400px;
+  position: relative;
+}
+
+.about_img img {
+  width: 100%;
+  border: 2px solid #3131ff;
+  position: relative;
+}
+
+.about_img::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 20px;
+  left: 20px;
+  border: 2px solid #3131ff;
+  z-index: 1;
+}
+
+.about_info {
+  width: 35%;
+}
+
+.about_info h3 {
+  margin-bottom: 30px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.about_info h3 span {
+  border-bottom: 2px solid #3131ff;
+}
+
+.about_info h2 {
+  font-size: 40px;
+  font-weight: 400;
+  color: #3131ff;
+}
+
+.about_info p {
+  font-size: 16px;
+}
+
+.about_info button {
+  margin: 25px 0;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  background-color: #3131ff;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+button:hover {
+  box-shadow: 0 5px 16px #3131ff;
+  color: #3131ff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 950px) {
+  .about {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .about_info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .about_img {
+    width: 80%;
+  }
+}
