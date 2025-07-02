@@ -12,8 +12,6 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";
-import TechBlog from "./pages/blog/TechBlog";
-import PersonalBlog from "./pages/blog/PersonalBlog";
 import BlogTerminalPortfolio from "./pages/BlogTerminalPortfolio";
 import BlogModernJavascript from "./pages/BlogModernJavascript";
 import BlogCleanCode from "./pages/BlogCleanCode";
@@ -55,10 +53,7 @@ function App() {
             <Route path="/social/npm" element={<SocialNpmPage />} />
 
             {/* Blog routes with nested routing */}
-            <Route path="/blog" element={<Blog />}>
-              <Route path="tech" element={<TechBlog />} />
-              <Route path="personal" element={<PersonalBlog />} />
-            </Route>
+            <Route path="/blog" element={<Blog />}></Route>
 
             {/* Individual blog post routes */}
             <Route
