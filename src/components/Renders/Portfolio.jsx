@@ -20,7 +20,7 @@ function Portfolio() {
             ? "Type 'awards'"
             : plcholder == 5
             ? "Type 'portfolio'"
-            : "Type 'projects'"
+            : "Type 'portfolio'"
         }
         value=""
         cd=""

@@ -1,0 +1,257 @@
+.portfolio-content {
+  padding: 20px 0;
+}
+
+.portfolio-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.section-title {
+  color: #00ff00;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.section-description {
+  color: #cccccc;
+  font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.category-filter {
+  background: #2d2d2d;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+}
+
+.filter-label {
+  color: #0099ff;
+}
+
+.filter-value {
+  color: #ffff00;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.portfolio-stats {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 15px;
+  background: #2d2d2d;
+  border-radius: 6px;
+  border: 1px solid #444;
+  transition: transform 0.2s;
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+  border-color: #00ff00;
+}
+
+.stat-label {
+  display: block;
+  color: #0099ff;
+  font-size: 12px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  color: #ffff00;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.no-projects {
+  text-align: center;
+  padding: 40px;
+  background: #2d2d2d;
+  border: 1px solid #444;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.no-projects p {
+  color: #666;
+  font-size: 16px;
+  margin: 0;
+}
+
+.portfolio-footer {
+  border-top: 1px solid #333;
+  padding-top: 30px;
+  margin-top: 30px;
+}
+
+.portfolio-footer h3 {
+  color: #00ff00;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.category-tag {
+  background: #1a1a1a;
+  color: #0099ff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: "Courier New", monospace;
+  border: 1px solid #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+
+.category-tag:hover {
+  background: #333;
+  border-color: #0099ff;
+  box-shadow: 0 0 8px rgba(0, 153, 255, 0.3);
+}
+
+.portfolio-commands {
+  background: #1a1a1a;
+  border-left: 4px solid #00ff00;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.portfolio-commands h3 {
+  color: #00ff00;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.portfolio-commands ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.portfolio-commands li {
+  color: #cccccc;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.portfolio-commands li:before {
+  content: ">";
+  color: #00ff00;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.portfolio-commands code {
+  background: #333;
+  color: #ffff00;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: "Courier New", monospace;
+}
+
+/* Loading animation */
+.projects-grid.loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.projects-grid.loading::after {
+  content: "Loading projects...";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #00ff00;
+  font-size: 18px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .categories-list {
+    gap: 8px;
+  }
+
+  .category-tag {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .section-description {
+    font-size: 14px;
+  }
+}

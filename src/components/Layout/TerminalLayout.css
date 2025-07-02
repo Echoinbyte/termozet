@@ -1,0 +1,138 @@
+.terminal-layout {
+  width: 100%;
+  min-height: 100vh;
+  background: #1e1e1e;
+  padding: 0;
+  margin: 0;
+  font-family: "Fira Code", "Courier New", monospace;
+}
+
+.terminal-window {
+  width: 100%;
+  height: 100vh;
+  background: #1e1e1e;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-header {
+  background: linear-gradient(90deg, #2d2d2d 0%, #3d3d3d 100%);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #444;
+  min-height: 40px;
+  flex-shrink: 0;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-button.red {
+  background: linear-gradient(135deg, #ff5f57 0%, #ff3b30 100%);
+}
+
+.terminal-button.yellow {
+  background: linear-gradient(135deg, #ffbd2e 0%, #ff9500 100%);
+}
+
+.terminal-button.green {
+  background: linear-gradient(135deg, #28ca42 0%, #30d158 100%);
+}
+
+.terminal-title {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.page-content {
+  background: #1e1e1e;
+  color: #00ff00;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-y: auto;
+  border-bottom: 1px solid #333;
+  max-height: 40vh; /* Limit page content to 40% of viewport */
+}
+
+/* Content should scroll if too long */
+.page-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.page-content::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+.page-content::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.page-content::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Animation for page content */
+.page-content {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .terminal-layout {
+    padding: 0;
+  }
+
+  .terminal-window {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .page-content {
+    padding: 15px;
+    font-size: 12px;
+    max-height: 30vh;
+  }
+
+  .terminal-header {
+    padding: 10px 15px;
+  }
+
+  .terminal-title {
+    font-size: 12px;
+  }
+}

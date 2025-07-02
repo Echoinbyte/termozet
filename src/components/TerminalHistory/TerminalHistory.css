@@ -1,0 +1,61 @@
+.terminal-history {
+  margin-bottom: 1rem;
+}
+
+.history-entry {
+  margin-bottom: 0.5rem;
+}
+
+.input-entry {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.input-entry .prompt-info {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.input-entry .username {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.input-entry .at {
+  color: #ffffff;
+}
+
+.input-entry .hostname {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.input-entry .path {
+  color: #0080ff;
+  font-weight: bold;
+}
+
+.input-entry .dollar {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.input-entry .command {
+  color: #00ff00;
+  font-family: "Courier New", monospace;
+}
+
+.output-entry {
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+}
+
+.output-text {
+  color: #ffffff;
+  font-family: "Courier New", monospace;
+  white-space: pre-wrap;
+  margin: 0;
+  padding: 0;
+}

@@ -1,6 +1,5 @@
-
-import Prompt from '../Prompt';
-import '../Styling/Contact.css';
+import Prompt from "../Prompt";
+import "../Styling/Contact.css";
 
 function Contact() {
   const plcholder = Math.floor(Math.random() * 7);
@@ -42,7 +41,7 @@ function Contact() {
             ? "Type 'awards'"
             : plcholder == 5
             ? "Type 'portfolio'"
-            : "Type 'projects'"
+            : "Type 'portfolio'"
         }
         value=""
         cd=""

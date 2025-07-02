@@ -1,22 +1,84 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Prompt from "./components/Prompt";
+
+// Import context
+import { TerminalProvider } from "./contexts/TerminalContext";
+
+// Import pages
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import Skills from "./pages/Skills";
+import Experience from "./pages/Experience";
+import TechBlog from "./pages/blog/TechBlog";
+import PersonalBlog from "./pages/blog/PersonalBlog";
+import BlogTerminalPortfolio from "./pages/BlogTerminalPortfolio";
+import BlogModernJavascript from "./pages/BlogModernJavascript";
+import BlogCleanCode from "./pages/BlogCleanCode";
+import BlogCssGrid from "./pages/BlogCssGrid";
+import BlogApiDesign from "./pages/BlogApiDesign";
+import Social from "./pages/Social";
+import SocialGithubPage from "./pages/SocialGithub";
+import SocialLinkedinPage from "./pages/SocialLinkedin";
+import SocialYouTubePage from "./pages/SocialYouTube";
+import SocialXPage from "./pages/SocialX";
+import SocialFacebookPage from "./pages/SocialFacebook";
+import SocialNpmPage from "./pages/SocialNpm";
+
+// Import original components for backward compatibility
+import Help from "./components/Renders/Help";
 
 function App() {
   return (
-    <>
-      <div className="screen unblank">
-        <div className="navbar">
-          <span className="navbar-button red"></span>
-          <span className="navbar-button yellow"></span>
-          <span className="navbar-button green"></span>
-          <div className="navbar-title">Termozet</div>
-          
+    <TerminalProvider>
+      <Router>
+        <div className="app">
+          <Routes>
+            {/* Main routes */}
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/help" element={<Help />} />
+
+            {/* Social routes */}
+            <Route path="/social" element={<Social />} />
+            <Route path="/social/github" element={<SocialGithubPage />} />
+            <Route path="/social/linkedin" element={<SocialLinkedinPage />} />
+            <Route path="/social/youtube" element={<SocialYouTubePage />} />
+            <Route path="/social/x" element={<SocialXPage />} />
+            <Route path="/social/facebook" element={<SocialFacebookPage />} />
+            <Route path="/social/npm" element={<SocialNpmPage />} />
+
+            {/* Blog routes with nested routing */}
+            <Route path="/blog" element={<Blog />}>
+              <Route path="tech" element={<TechBlog />} />
+              <Route path="personal" element={<PersonalBlog />} />
+            </Route>
+
+            {/* Individual blog post routes */}
+            <Route
+              path="/blog/terminal-portfolio"
+              element={<BlogTerminalPortfolio />}
+            />
+            <Route
+              path="/blog/modern-javascript"
+              element={<BlogModernJavascript />}
+            />
+            <Route path="/blog/clean-code" element={<BlogCleanCode />} />
+            <Route path="/blog/css-grid" element={<BlogCssGrid />} />
+            <Route path="/blog/api-design" element={<BlogApiDesign />} />
+
+            {/* Catch all route - redirect to home */}
+            <Route path="*" element={<Home />} />
+          </Routes>
         </div>
-        <div className="margin unblank">
-          <Prompt placeholder="Type &rarr; '.help' and press 'Enter'" value="" cd=""/>
-        </div>
-      </div>
-    </>
+      </Router>
+    </TerminalProvider>
   );
 }
 

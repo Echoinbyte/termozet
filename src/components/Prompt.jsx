@@ -1,20 +1,14 @@
 import { useRef, useEffect, useState } from "react";
 import "./Prompt.css";
 import Help from "./Renders/Help";
-import Repo from "./Renders/Social_repo";
 import Error from "./Renders/Error";
 import FalseValue from "./Renders/FalseValue";
 import Ls from "./Renders/Ls";
-import Social from "./Renders/Cd-Social";
-import Play from "./Renders/Cd-Play";
-import Dot from "./Renders/Cd-dot";
 import Portfolio from "./Renders/Portfolio";
 import Contact from "./Renders/Contact";
 import About from "./Renders/About";
-import Projects from "./Renders/Projects";
 import Awards from "./Renders/Awards";
 import Youtube from "./Renders/Social_Youtube";
-import Easter from "./Renders/Play_easter";
 import PropTypes from "prop-types";
 
 function Prompt(props) {
@@ -37,20 +31,25 @@ function Prompt(props) {
   const keywords = [
     "portfolio",
     "ls",
+    "help",
     ".help",
     "reload",
     "",
-    "projects",
     "contact",
     "about",
     "awards",
-    "cd social",
+    "social",
+    "social/github",
     "social/youtube",
-    "social/repo",
-    "cd play",
-    "play/easter",
-    "social/..",
-    "play/..",
+    "social/linkedin",
+    "social/x",
+    "social/facebook",
+    "social/npm",
+    "skills",
+    "experience",
+    "blog",
+    "home",
+    "figlet",
   ];
   const [value, setValue] = useState("");
   const [effect, setEffect] = useState("");
@@ -71,7 +70,7 @@ function Prompt(props) {
   const handleSubmit = () => {
     console.log("Input value submitted:", value);
     if (keywords.includes(value)) {
-      if (value == ".help") {
+      if (value == "help" || value == ".help") {
         setRender(<Help />);
       } else if (value == "") {
         window.location.reload();
@@ -83,24 +82,12 @@ function Prompt(props) {
         setRender(<About />);
       } else if (value == "contact") {
         setRender(<Contact />);
-      } else if (value == "projects") {
-        setRender(<Projects />);
       } else if (value == "awards") {
         setRender(<Awards />);
       } else if (value == "reload") {
         window.location.reload();
-      } else if (value == "cd social") {
-        setRender(<Social />);
-      } else if (value == "social/repo") {
-        setRender(<Repo />);
       } else if (value == "social/youtube") {
         setRender(<Youtube />);
-      } else if (value == "cd play") {
-        setRender(<Play />);
-      } else if (value == "play/easter") {
-        setRender(<Easter />);
-      } else if (value == "social/.." || value == "play/..") {
-        setRender(<Dot />);
       } else {
         setRender(<FalseValue value={value} />);
       }

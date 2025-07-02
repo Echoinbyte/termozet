@@ -1,0 +1,176 @@
+.real-terminal {
+  width: 100%;
+  min-height: 100vh;
+  background: #1e1e1e;
+  color: #00ff00;
+  font-family: "Fira Code", "Courier New", monospace;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.terminal-content {
+  padding: 0;
+  margin: 0;
+}
+
+/* Debug: Add border to see spacing issues */
+.terminal-line {
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+  line-height: 1;
+  display: block;
+}
+
+.current-line {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: auto;
+}
+
+.current-line .terminal-input {
+  caret-color: #00ff00;
+}
+
+.input-line {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  max-width: 100%;
+}
+
+.prompt {
+  flex-shrink: 0;
+  margin-right: 0px;
+}
+
+.username {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.at {
+  color: #ffffff;
+}
+
+.hostname {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.separator {
+  color: #ffffff;
+}
+
+.path {
+  color: #0099ff;
+  font-weight: bold;
+}
+
+.dollar {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.command {
+  color: #ffffff;
+  word-break: break-all;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: inherit;
+  width: 300px;
+  margin: 0;
+  padding: 0;
+}
+
+.terminal-input:disabled {
+  opacity: 0.6;
+}
+
+.processing {
+  color: #ffaa00;
+  margin-left: 10px;
+  font-style: italic;
+}
+
+.output-line {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.output-text {
+  color: #ffffff;
+  font-family: inherit;
+  white-space: pre-wrap;
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+  line-height: 1;
+}
+
+.output-component {
+  color: #ffffff;
+}
+
+.cursor {
+  color: #00ff00;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Make sure terminal scrolls smoothly */
+.real-terminal {
+  scroll-behavior: smooth;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .real-terminal {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .prompt {
+    font-size: 12px;
+  }
+}
+
+/* Better scrollbar */
+.real-terminal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.real-terminal::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+.real-terminal::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.real-terminal::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
