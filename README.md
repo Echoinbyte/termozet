@@ -1,10 +1,10 @@
-# Termozet - Interactive Terminal Portfolio v4.0
+# Termozet - Interactive Terminal Portfolio
 
 A modern, highly interactive terminal-style portfolio website built with React and React Router. This latest version features clickable navigation, enhanced user experience, comprehensive social media integration, and advanced system commands that simulate a real terminal environment.
 
 🌐 **Live Demo**: [termozet.vercel.app](https://termozet.vercel.app) | Local: `http://localhost:5174`
 
-## 🆕 What's New in v4.0
+## 🆕 What's New
 
 ### 🖱️ Revolutionary Clickable Navigation
 - **Interactive Command Links**: Click any command to execute instantly

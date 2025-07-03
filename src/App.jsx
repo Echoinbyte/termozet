@@ -25,8 +25,6 @@ import SocialXPage from "./pages/SocialX";
 import SocialFacebookPage from "./pages/SocialFacebook";
 import SocialNpmPage from "./pages/SocialNpm";
 
-// Import original components for backward compatibility
-import Help from "./components/Renders/Help";
 
 function App() {
   return (
@@ -41,7 +39,6 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/experience" element={<Experience />} />
-            <Route path="/help" element={<Help />} />
 
             {/* Social routes */}
             <Route path="/social" element={<Social />} />

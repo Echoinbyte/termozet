@@ -11,7 +11,6 @@ import PropTypes from "prop-types";
 import HelpContent from "../RenderContent/HelpContent";
 import LsContent from "../RenderContent/LsContent";
 import InvalidCommand from "../RenderContent/InvalidCommand";
-import Awards from "../Renders/Awards";
 
 // Import page content components for same-route navigation
 import AboutContent from "../RenderContent/AboutContent";
@@ -77,27 +76,45 @@ const RealTerminal = ({ username = "flame", hostname = "Nitro" }) => {
       <div className="text-white font-mono whitespace-pre-wrap">
         {`Welcome to Termozet Terminal! 🚀
 ╔══════════════════════════════════════════════════════════════╗
-║                    Enhanced Terminal Portfolio               ║
+║                    Interactive Terminal Portfolio            ║
 ╚══════════════════════════════════════════════════════════════╝
 
 🖥️  System: Ubuntu 20.04 LTS | User: ${username}@${hostname}
 📅 Last login: ${new Date().toLocaleString()}
 📧 Contact: echoinbyte@gmail.com
 
-✨ FEATURES:
-  • Real-time weather with 'curl wttr.in'
-  • Enhanced system info with actual browser/device data
-  • Improved social media integration
-  • Instant command execution (no typing animation)
-  • Real command history and auto-completion
+🌟 OVERVIEW:
+This is an interactive terminal-based portfolio showcasing my projects,
+skills, and experience. Navigate through different sections using familiar
+terminal commands, explore my social profiles, read technical blog posts,
+and discover real-time utilities.
 
-🌐 QUICK START:
-  • Type 'help' for comprehensive command reference
-  • Type 'ls' to explore available directories and commands
-  • Type 'neofetch' for detailed system information
-  • Use 'social/<platform>' for direct social links
+✨ ESSENTIAL COMMANDS:
+  • ls              - List all available directories and commands
+  • help            - Comprehensive command reference and usage guide
+  • curl wttr.in    - Real-time weather report for your location
+  • social          - Social media dashboard with live stats
+  • social/github   - GitHub profile with repositories
+  • blog            - Technical articles and programming insights
+  • figlet [text]   - Generate ASCII art banners
+  • cal             - Interactive terminal calendar
+  • fortune         - Random programming quotes and wisdom
 
-📱 SOCIAL PROFILES:
+🌐 NAVIGATION:
+  • about           - Personal information and background
+  • portfolio       - Featured projects and work
+  • contact         - Get in touch with me
+  • skills          - Technical expertise and technologies
+  • experience      - Professional journey and achievements
+
+📝 BLOG POSTS:
+  • blog/terminal-portfolio - How this portfolio was built
+  • blog/modern-javascript  - Latest JavaScript features
+  • blog/clean-code        - Clean coding principles
+  • blog/css-grid          - CSS Grid layout guide
+  • blog/api-design        - REST API best practices
+
+📱 SOCIAL NETWORKS:
   • GitHub: echoinbyte | Facebook: possiblearyal | NPM: sambhavaryal
   • LinkedIn, YouTube, X(Twitter): echoinbyte`}
 
@@ -133,12 +150,15 @@ const RealTerminal = ({ username = "flame", hostname = "Nitro" }) => {
 
         {`
 
-📍 QUICK COMMANDS:
-  Type any of the navigation commands above to explore!
-  Use 'help' for comprehensive command reference
-  Use 'ls' to see all available directories and commands
+🎯 GET STARTED:
+  Start exploring by typing any command above or try these popular ones:
+  • 'ls' to see everything available
+  • 'help' for detailed command documentation
+  • 'social/github' to view my GitHub profile
+  • 'curl wttr.in' for real-time weather
+  • 'figlet Hello' to create ASCII art
 
-Ready to explore! Type a command below or 'help' for assistance:`}
+Ready to explore! Type a command below:`}
       </div>
     );
   }, [username, hostname]);
@@ -218,7 +238,7 @@ Ready to explore! Type a command below or 'help' for assistance:`}
   ];
 
   // Commands that show inline output (non-navigation)
-  const inlineCommands = ["ls", "help", ".help", "awards"];
+  const inlineCommands = ["ls", "help", ".help"];
 
   // All available commands for autocompletion
   const allCommands = [
@@ -311,7 +331,6 @@ Ready to explore! Type a command below or 'help' for assistance:`}
     // Other inline command components (non-navigation)
     if (command === "help" || command === ".help") return <HelpContent />;
     if (command === "ls") return <LsContent />;
-    if (command === "awards") return <Awards />;
 
     return null;
   };

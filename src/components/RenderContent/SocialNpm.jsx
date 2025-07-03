@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
+import ClickableLink from "../ClickableLink";
 
 const SocialNpm = () => {
   const [npmData, setNpmData] = useState(null);
   const [packages, setPackages] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchNpmData = async () => {
@@ -12,7 +12,7 @@ const SocialNpm = () => {
         setLoading(true);
         // Fetch user data from NPM registry
         const userResponse = await fetch(
-          "https://registry.npmjs.org/-/user/echoinbyte"
+          "https://registry.npmjs.org/-/user/sambhavaryal"
         );
 
         if (!userResponse.ok) {
@@ -23,7 +23,7 @@ const SocialNpm = () => {
 
         // Fetch user's packages
         const packagesResponse = await fetch(
-          "https://registry.npmjs.org/-/v1/search?text=maintainer:echoinbyte&size=10"
+          "https://registry.npmjs.org/-/v1/search?text=maintainer:sambhavaryal&size=10"
         );
         let packagesData = { objects: [] };
 
@@ -33,38 +33,14 @@ const SocialNpm = () => {
 
         setNpmData(userData);
         setPackages(packagesData.objects || []);
-        setError(null);
       } catch (err) {
         console.error("Error fetching NPM data:", err);
-        setError(err.message);
-        // Fallback to static data if API fails
+        // Set fallback data without displaying error to user
         setNpmData({
           name: "echoinbyte",
-          email: "contact@echoinbyte.dev",
+          email: "echoinbyte@gmail.com",
         });
-        setPackages([
-          {
-            package: {
-              name: "react-terminal-ui",
-              description: "Customizable terminal components for React",
-              version: "1.2.3",
-            },
-          },
-          {
-            package: {
-              name: "dev-portfolio-cli",
-              description: "CLI tool for generating developer portfolios",
-              version: "2.1.0",
-            },
-          },
-          {
-            package: {
-              name: "git-workflow-helper",
-              description: "Simplify git workflows with interactive commands",
-              version: "1.0.5",
-            },
-          },
-        ]);
+        setPackages([]); // Set empty packages array instead of fake data
       } finally {
         setLoading(false);
       }
@@ -90,11 +66,6 @@ const SocialNpm = () => {
     <div className="text-white font-mono">
       <div className="mb-4">
         <span className="text-red-500 font-bold">📦 NPM Profile</span>
-        {error && (
-          <div className="text-red-400 text-sm mt-1">
-            ⚠️ API Error: {error} (showing cached data)
-          </div>
-        )}
       </div>
 
       <div className="space-y-2 ml-4">
@@ -117,7 +88,12 @@ const SocialNpm = () => {
         {npmData?.email && (
           <div className="flex items-start">
             <span className="text-green-400 w-20">Email:</span>
-            <span className="text-blue-400">{npmData.email}</span>
+            <ClickableLink
+              url={`mailto:${npmData.email}`}
+              className="text-blue-400 hover:text-blue-300"
+            >
+              {npmData.email}
+            </ClickableLink>
           </div>
         )}
       </div>
@@ -155,33 +131,28 @@ const SocialNpm = () => {
         <div className="text-yellow-400 mb-2">🔗 NPM Profile:</div>
         <div className="space-y-1 text-sm">
           <div>
-            <span className="text-cyan-400">→</span> View packages:
-            <a
-              href="https://npmjs.com/~sambhavaryal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-red-500 hover:text-red-400 ml-1 underline"
+            <span className="text-cyan-400">→</span> View packages:{" "}
+            <ClickableLink
+              url="https://npmjs.com/~sambhavaryal"
+              className="text-red-500 hover:text-red-400"
             >
               npmjs.com/~sambhavaryal
-            </a>
+            </ClickableLink>
           </div>
           <div>
-            <span className="text-cyan-400">→</span> GitHub packages:
-            <a
-              href="https://github.com/echoinbyte?tab=repositories"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 ml-1 underline"
+            <span className="text-cyan-400">→</span> GitHub packages:{" "}
+            <ClickableLink
+              url="https://github.com/echoinbyte?tab=repositories"
+              className="text-blue-400 hover:text-blue-300"
             >
               View source code
-            </a>
+            </ClickableLink>
           </div>
         </div>
       </div>
 
       <div className="mt-4 text-gray-400 text-sm">
-        💡 Type <span className="text-green-400">home</span> to go back to
-        home
+        💡 Type <span className="text-green-400">home</span> to go back to home
       </div>
     </div>
   );
